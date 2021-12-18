@@ -10,7 +10,7 @@ public class X_Entry implements IXposedHookLoadPackage {
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) {
         if(!lpparam.packageName.equals("com.ticktalk.dictionary")) {
-            XposedBridge.log("TArget app not found. Module is inactive");
+            XposedBridge.log("Target app not found. Module is inactive");
         }else {
             XposedBridge.log("Target app found. Hook started");
             XposedHelpers.findAndHookMethod("com.appgroup.premium.PremiumHelperBase", lpparam.classLoader,
